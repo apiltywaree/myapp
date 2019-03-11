@@ -38,12 +38,16 @@ npm install typing -D
 
 Step1
 > npm install -g @angular/cli
+
 Step2
 > ng new firstapp
+
 Step 3
 > cd firstapp
+
 Step 4
 > npm start
+
 Step 5
 > http://localhost:4200
 
@@ -77,8 +81,8 @@ ReadME.md | Default | CanChange according to project => Information about
 package.json | Default | Change Require => Have Informationof packages as well
                                         Script to run the appliaction
 package-lock.json| Default | NoChange => Information of all packages
-<6 angular.json
->=5 angular-cli.json| Default | Less Change Require => path for directory or app required path
+< angular 6 angular.json
+>= angular 5 angular-cli.json| Default | Less Change Require => path for directory or app required path
 
 .gitignore| Default | Less Change Require => path or file which we dont want to push
 .editorconfig | Default | NoChange=>   make same standerd of wirting among team
