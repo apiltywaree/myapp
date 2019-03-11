@@ -1,0 +1,30 @@
+npm install --save package-name //this will add new package to node_modules
+
+global - package required before running application
+npm install -g @angular/cli -d -> it will pick dev dependencies in package.json
+default angular port: 4200
+Bootstrap: it helps to make app responsive
+Grid classes: a row is divided into 12 columns
+xs,sm,md,lg
+Angular will have code in .ts typescript and compiler will change to js
+Angular will read angular.json first
+We write our code in src folder
+
+to change port
+ng serve --port 8900 : app will run in 8900 port
+app folder:
+asset: all static content like js, css, images,
+environment: app is in prod or dev
+browser list: info about which browser it supports
+index.html: browser will load index.html as base file
+main.ts: after angular.json file main.ts will load/execute
+
+Modules: all declaration done here
+Components: contains html, css and logic
+Pipe: Runtime transformation like discount applied to amount from DB
+app.module.ts: just indication content inside it will make it module or component, doesnot depend on file name
+app.component.ts: just indication content inside it will make it module or component, doesnot depend on file name
+Every file will have import, decorator and export
+
+Service: connect DB, backend or APIs
+Routing: routing between pages
