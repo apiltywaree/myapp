@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
 @Component({
   // here selector should start with app
   selector: 'app-main',
-  template: `<h1>This is my first app.</h1>
-              <app-book></app-book>`
+  // we can add only one template here but styleUrl can be multiple
+  templateUrl: './app.component.html'
 
 })
 
@@ -14,3 +14,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 }
+
+/* template: `<h1>This is my first component</h1>
+                <app-book></app-book>`
+*/
