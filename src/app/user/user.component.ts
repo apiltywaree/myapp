@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class UserComponent {
   userDetails: String = 'User Details Page';
   searchby: String = 'Search By';
+  userSearchBy: String;
   users: any = [
     {
       "id": 1,

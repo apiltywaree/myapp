@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product.model';
 
 @Component ({
   selector: 'app-product',
@@ -7,11 +8,15 @@ import { Component } from '@angular/core';
 
 export class ProductComponent {
   title: String = 'Filter By:=>';
+  userSearch: String;
   OutStr: String = 'Number of product Filter:';
   users: any[] = ['John', 'Mark', 'Shmmy', 'Pooja', 'Aakash'];
   showImage: Boolean = false;
   // imgUrl: String = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png";
-  products: any = [
+
+  constructor() {}
+
+    products: IProduct[] = [
     {
       '_id': '5a05dacc734d1d68d42d31f3',
       'productId': 1,

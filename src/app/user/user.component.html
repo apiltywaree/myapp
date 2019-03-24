@@ -9,7 +9,10 @@
           {{searchby}}
         </div>
         <div class="col-md-4">
-          <input type="text"/>
+          <input type="text" [(ngModel)]="userSearchBy"/>
+        </div>
+        <div class="col-md-4">
+          <h4>{{userSearchBy}}</h4>
         </div>
       </div>
       <div class="table-responsive">
@@ -26,13 +29,13 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor = "let user of users">
+          <tr *ngFor = "let user of users | searchUserBy:userSearchBy">
             <td>{{user.name}}</td>
             <td>{{user.username}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phone}}</td>
             <td>{{user.website}}</td>
-            <td>
+            <td>{{user.company.name}}
               <em>{{user.company.name}}</em>
                 {{user.company.catchPhrase}}
                 {{user.company.bs}}
