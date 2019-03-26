@@ -32,3 +32,9 @@ Routing: routing between pages
 https://codeburst.io/getting-started-with-angular-7-and-bootstrap-4-styling-6011b206080
 // in your terminal in the root of your project
 npm install bootstrap jquery popper
+
+install bootstrap
+npm install bootstrap@3 jquery --save
+
+uninstall bootstrap
+npm -g uninstall bootstrap --save

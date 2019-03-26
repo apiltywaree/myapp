@@ -1,22 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product.model';
+import { ProductService } from './product.service';
 
 @Component ({
   selector: 'app-product',
-  templateUrl: './product.component.html'
+  templateUrl: './product.component.html',
+  styles: [
+    `.onlineClass{
+            color:red}`
+  ]
+  // providers: [ProductService]
 })
 
-export class ProductComponent {
+export class ProductComponent implements OnInit {
+  mainHeading: String = '****Product List****';
+  localval = localStorage.getItem('outval');
   title: String = 'Filter By:=>';
   userSearch: String;
+  imageWidth: Number = 70;
+  serverStatus: String = 'offline';
   OutStr: String = 'Number of product Filter:';
   users: any[] = ['John', 'Mark', 'Shmmy', 'Pooja', 'Aakash'];
   showImage: Boolean = false;
   // imgUrl: String = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png";
 
-  constructor() {}
+  constructor(private _productService: ProductService) {
+    this.serverStatus = Math.random() > 0.5 ? 'Online' : 'offline';
+  }
 
-    products: IProduct[] = [
+  products: IProduct[];
+
+  ngOnInit(): void {
+    this._productService.getProducts()
+      .subscribe((data) => this.products = data);
+  }
+
+  // This is moved to service class
+    /*products: IProduct[] = [
     {
       '_id': '5a05dacc734d1d68d42d31f3',
       'productId': 1,
@@ -39,9 +59,13 @@ export class ProductComponent {
       'starRating': 4.2,
       'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
     }
-  ];
+  ];*/
 
   toggleImage(): void {
     this.showImage = !this.showImage;
+  }
+
+  onDataReceive(message: string) {
+    this.mainHeading = '~~~~~Product List~~~~~  ' + message;
   }
 }

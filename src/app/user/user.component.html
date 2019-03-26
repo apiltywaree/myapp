@@ -15,6 +15,9 @@
           <h4>{{userSearchBy}}</h4>
         </div>
       </div>
+      <div>
+        <h4>{{userSearchResult}}{{(users | searchUserBy:userSearchBy).length}}</h4>
+      </div>
       <div class="table-responsive">
         <table class="table">
           <thead>

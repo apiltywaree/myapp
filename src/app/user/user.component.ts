@@ -9,6 +9,7 @@ export class UserComponent {
   userDetails: String = 'User Details Page';
   searchby: String = 'Search By';
   userSearchBy: String;
+  userSearchResult: String = 'User Search Results: ';
   users: any = [
     {
       "id": 1,
