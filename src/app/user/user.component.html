@@ -32,10 +32,10 @@
           <tbody>
           <tr *ngFor = "let user of users | searchUserBy:userSearchBy">
             <td><a [routerLink]="['/user',user.id]">{{user.name}}</a></td>
-            <td>{{user.username}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.phone}}</td>
-            <td>{{user.website}}</td>
+            <td><a [routerLink]="['/user',user.id]">{{user.username}}</a></td>
+            <td><a [routerLink]="['/user',user.id]">{{user.email}}</a></td>
+            <td><a [routerLink]="['/user',user.id]">{{user.phone}}</a></td>
+            <td><a [routerLink]="['/user',user.id]">{{user.website}}</a></td>
           </tr>
           </tbody>
         </table>
