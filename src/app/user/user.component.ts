@@ -1,16 +1,29 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { Iuser } from './user.model';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html'
 })
 
-export class UserComponent {
-  userDetails: String = 'User Details Page';
+export class UserComponent implements OnInit {
+  userDetails: String = 'Users Page';
   searchby: String = 'Search By';
   userSearchBy: String;
   userSearchResult: String = 'User Search Results: ';
-  users: any = [
+
+  constructor(private _userService: UserService) {}
+
+  users: Iuser[];
+
+  ngOnInit(): void {
+    this._userService.getUsers()
+      .subscribe((data) => this.users = data);
+  }
+
+  // moved to service call
+  /*users: any = [
     {
       "id": 1,
       "name": "Leanne Graham",
@@ -241,5 +254,5 @@ export class UserComponent {
         "bs": "target end-to-end models"
       }
     }
-  ];
+  ];*/
 }

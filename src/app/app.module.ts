@@ -1,24 +1,34 @@
 // import
+// Modules
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { BookComponent } from './book.component';
-import { ProductComponent } from './product/product.component';
-import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
+
+// Pipes
 import { ToUpperCasePipe } from './product/name.upperCase.pipe';
 import { DiscountPipe } from './product/discount.pipe';
 import { SearchPipe } from './product/search.pipe';
-import { FormsModule } from '@angular/forms';
 import { UserSearchPipe } from './user/user.search.pipe';
+
+// Components
+import { AppComponent } from './app.component';
+import { ProductComponent } from './product/product.component';
+import { BookComponent } from './book.component';
 import { AdminComponent } from './admin/admin.component';
-import { ProductService } from './product/product.service';
-import { HttpClientModule } from '@angular/common/http';
 import { StarComponent } from './shared/star.component';
+import { UserComponent } from './user/user.component';
 import { HomeComponent } from './Home/home.component';
 import { OrderComponent } from './orders/order.component';
 import { ProductDetailComponent } from './product/product-detail.component';
-import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './shared/notfound.component';
+import { UserDetailComponent } from './user/user.detail';
+
+// Services
+import { ProductService } from './product/product.service';
+import { UserService } from './user/user.service';
+import { HomeService } from './Home/home.service';
 
 // decorator as NgModule is new module here.
 @NgModule({
@@ -33,6 +43,7 @@ import { NotFoundComponent } from './shared/notfound.component';
       {path: 'order', component: OrderComponent},
       {path: 'home', component: HomeComponent},
       {path: 'user', component: UserComponent},
+      {path: 'user/:id', component: UserDetailComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full' },
       {path: '**', component: NotFoundComponent }
     ])
@@ -53,7 +64,8 @@ import { NotFoundComponent } from './shared/notfound.component';
     ProductDetailComponent,
     HomeComponent,
     OrderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserDetailComponent
   ],
 
   // only first component here app component is first component so it goes here. if there are other component then they will not be
@@ -64,7 +76,9 @@ import { NotFoundComponent } from './shared/notfound.component';
 
   // All Service here
   providers: [
-    ProductService
+    ProductService,
+    UserService,
+    HomeService
   ]
 
 })

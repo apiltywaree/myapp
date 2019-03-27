@@ -27,30 +27,15 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Website</th>
-            <th>Company</th>
-            <th>Address</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor = "let user of users | searchUserBy:userSearchBy">
-            <td>{{user.name}}</td>
+            <td><a [routerLink]="['/user',user.id]">{{user.name}}</a></td>
             <td>{{user.username}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phone}}</td>
             <td>{{user.website}}</td>
-            <td>{{user.company.name}}
-              <em>{{user.company.name}}</em>
-                {{user.company.catchPhrase}}
-                {{user.company.bs}}
-            </td>
-            <td>
-              {{user.address.street}}
-              {{user.address.suite}}
-              {{user.address.city}}
-              {{user.address.zipcode}}
-              {{user.address.geo.lat}}
-              {{user.address.geo.lng}}
-            </td>
           </tr>
           </tbody>
         </table>
