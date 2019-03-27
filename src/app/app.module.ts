@@ -24,6 +24,7 @@ import { OrderComponent } from './orders/order.component';
 import { ProductDetailComponent } from './product/product-detail.component';
 import { NotFoundComponent } from './shared/notfound.component';
 import { UserDetailComponent } from './user/user.detail';
+import { LoginComponent } from './login/login.component';
 
 // Services
 import { ProductService } from './product/product.service';
@@ -43,8 +44,9 @@ import { HomeService } from './Home/home.service';
       {path: 'order', component: OrderComponent},
       {path: 'home', component: HomeComponent},
       {path: 'user', component: UserComponent},
+      {path: 'login', component: LoginComponent},
       {path: 'user/:id', component: UserDetailComponent},
-      {path: '', redirectTo: 'home', pathMatch: 'full' },
+      {path: '', redirectTo: 'login', pathMatch: 'full' },
       {path: '**', component: NotFoundComponent }
     ])
   ],
@@ -65,7 +67,8 @@ import { HomeService } from './Home/home.service';
     HomeComponent,
     OrderComponent,
     NotFoundComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    LoginComponent
   ],
 
   // only first component here app component is first component so it goes here. if there are other component then they will not be
