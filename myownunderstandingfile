@@ -38,3 +38,6 @@ npm install bootstrap@3 jquery --save
 
 uninstall bootstrap
 npm -g uninstall bootstrap --save
+
+install moment
+npm install --save moment

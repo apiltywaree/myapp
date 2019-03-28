@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import { Iuser } from './user.model';
 import { UserService } from './user.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-user',
@@ -8,11 +9,11 @@ import { UserService } from './user.service';
 })
 
 export class UserComponent implements OnInit {
-  userDetails: String = 'Users Page';
-  searchby: String = 'Search By';
-  userSearchBy: String;
-  userSearchResult: String = 'User Search Results: ';
-
+  userDetails: string = 'Users Page';
+  searchby: string = 'Search By';
+  userSearchBy: string;
+  userSearchResult: string = 'User Search Results: ';
+  loggedInTime: string = moment().format();
   constructor(private _userService: UserService) {}
 
   users: Iuser[];
