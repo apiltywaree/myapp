@@ -17,4 +17,8 @@ export class HomeComponent implements OnInit {
     this._homeService.getMovies()
       .subscribe((data) => this.movies = data);
   }
+
+  onDataReceiveForHomePage(message: string) {
+    this.pageTitle = '~~~~~Movie List~~~~~  ' + message;
+  }
 }

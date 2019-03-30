@@ -1,32 +1,36 @@
 // import
 // Modules
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 // Pipes
+import { ToUpperCasePipe } from './product/name.upperCase.pipe';
+import { DiscountPipe } from './product/discount.pipe';
+import { SearchPipe } from './product/search.pipe';
 import { UserSearchPipe } from './user/user.search.pipe';
 
 // Components
 import { AppComponent } from './app.component';
+import { ProductComponent } from './product/product.component';
 import { BookComponent } from './book.component';
 import { AdminComponent } from './admin/admin.component';
+import { StarComponent } from './shared/star.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './Home/home.component';
 import { OrderComponent } from './orders/order.component';
+import { ProductDetailComponent } from './product/product-detail.component';
 import { NotFoundComponent } from './shared/notfound.component';
 import { UserDetailComponent } from './user/user.detail';
 import { LoginComponent } from './login/login.component';
 import { LoginSubmitComponent } from './shared/login.submit';
 
 // Services
+import { ProductService } from './product/product.service';
 import { UserService } from './user/user.service';
 import { HomeService } from './Home/home.service';
-import { AppRoutingModule } from './app-routing.module';
-import { ProductModule } from './product/product.module';
-import { MusicModule } from './music/music-module.module';
-import { SharedModule } from './shared/shared.module';
 
 // decorator as NgModule is new module here.
 @NgModule({
@@ -35,19 +39,32 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    ProductModule,
-    MusicModule,
-    SharedModule
+    RouterModule.forRoot([
+      {path: 'product', component: ProductComponent},
+      {path: 'product/:id', component: ProductDetailComponent},
+      {path: 'order', component: OrderComponent},
+      {path: 'home', component: HomeComponent},
+      {path: 'user', component: UserComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'user/:id', component: UserDetailComponent},
+      {path: '', redirectTo: 'login', pathMatch: 'full' },
+      {path: '**', component: NotFoundComponent }
+    ])
   ],
 
   // All the components & pipe, if we add more component other than first one they are registered here.
   declarations: [
     AppComponent,
     UserComponent,
+    ProductComponent,
     BookComponent,
+    ToUpperCasePipe,
+    DiscountPipe,
+    SearchPipe,
     UserSearchPipe,
     AdminComponent,
+    StarComponent,
+    ProductDetailComponent,
     HomeComponent,
     OrderComponent,
     NotFoundComponent,
@@ -64,6 +81,7 @@ import { SharedModule } from './shared/shared.module';
 
   // All Service here
   providers: [
+    ProductService,
     UserService,
     HomeService
   ]

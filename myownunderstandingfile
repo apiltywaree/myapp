@@ -41,3 +41,27 @@ npm -g uninstall bootstrap --save
 
 install moment
 npm install --save moment
+
+/*
+
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/gitlearn.git
+git push -u origin master
+*/
+
+cli
+ng new firstapp
+ng g c music/ ng generate component music
+ng g s musicservice
+ng g m module
+ng g p pipe
+
+///
+product app
+>>ng build --prod
+This will build dist folder with some resources, all resources inside this folder should be added to ang-app folder
+in production.
+
+

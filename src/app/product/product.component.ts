@@ -14,12 +14,12 @@ import { ProductService } from './product.service';
 
 export class ProductComponent implements OnInit {
   mainHeading: string = '****Product List****';
-  localval = localStorage.getItem('outval');
-  title: string = 'Filter By:=>';
+  localval = localStorage.getItem('UserloggedIntime');
+  title: string = 'Search Product By:';
   userSearch: string;
   imageWidth: Number = 70;
   serverStatus: string = 'offline';
-  OutStr: string = 'Number of product Filter:';
+  OutStr: string = 'Number of product Filter: ';
   users: any[] = ['John', 'Mark', 'Shmmy', 'Pooja', 'Aakash'];
   showImage: Boolean = false;
   // imgUrl: String = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png";

@@ -24,7 +24,10 @@
               {{movie.language}}
             </td>
             <td>{{movie.type}}</td>
-            <td>{{movie.rate}}</td>
+            <td>
+              <app-star [rating]="movie.rate"
+                        (ratingClicked)="onDataReceiveForHomePage($event)"></app-star>
+            </td>
             <td>
               <img [src]="movie.imageUrl"
                    [style.width.px]="imageWidth"/>
