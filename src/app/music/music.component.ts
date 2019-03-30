@@ -9,7 +9,7 @@ import { MusicService } from './music-service';
   styleUrls: ['./music.component.css']
 })
 export class MusicComponent implements OnInit {
-  music: IMusic[];
+  music: any[];
 
   constructor(private _music: MusicService) { }
 

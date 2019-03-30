@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { ProductModule } from './product/product.module';
+import { MusicModule } from './music/music-module.module';
+import { SharedModule } from './shared/shared.module';
 
 // Pipes
 import { UserSearchPipe } from './user/user.search.pipe';
@@ -23,10 +27,6 @@ import { LoginSubmitComponent } from './shared/login.submit';
 // Services
 import { UserService } from './user/user.service';
 import { HomeService } from './Home/home.service';
-import { AppRoutingModule } from './app-routing.module';
-import { ProductModule } from './product/product.module';
-import { MusicModule } from './music/music-module.module';
-import { SharedModule } from './shared/shared.module';
 
 // decorator as NgModule is new module here.
 @NgModule({

@@ -8,12 +8,12 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { UserDetailComponent } from './user/user.detail';
 import { NotFoundComponent } from './shared/notfound.component';
-import { RouterGaurdService } from './product/router-gaurds.service';
+import { RouterGuardService } from './product/router-gaurds.service';
 import { MusicComponent } from './music/music.component';
 
 const routes: Routes = [
   {path: 'product', component: ProductComponent},
-  {path: 'product/:id', canActivate: [ RouterGaurdService ], component: ProductDetailComponent},
+  {path: 'product/:id', canActivate: [ RouterGuardService ], component: ProductDetailComponent},
   {path: 'order', component: OrderComponent},
   {path: 'music', component: MusicComponent},
   {path: 'home', component: HomeComponent},
@@ -27,7 +27,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],
-  providers: [ RouterGaurdService ],
+  providers: [ RouterGuardService ],
   exports: [ RouterModule ]
 })
 

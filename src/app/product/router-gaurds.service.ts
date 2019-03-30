@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 
 @Injectable()
 
-export class RouterGaurdService implements CanActivate {
+export class RouterGuardService implements CanActivate {
 
   constructor(private _router: Router) {}
   canActivate(route: ActivatedRouteSnapshot): boolean {
