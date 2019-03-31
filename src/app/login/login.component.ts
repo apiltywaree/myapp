@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import _date = moment.unitOfTime._date;
 
 @Component({
   selector: 'app-login',
@@ -21,6 +22,7 @@ export class LoginComponent {
   this.password = this.data.password;
   if (this.username === 'admin' && this.password === 'admin') {
     localStorage.setItem('UserloggedIntime', this.timelogging);
+    localStorage.setItem('userLoggedInTimeInAgo', moment().format());
       // moment().format('MMMM Do YYYY, h:mm:ss a').toString());
     this._router.navigate(['/user']);
   } else {

@@ -13,22 +13,21 @@ export class UserComponent implements OnInit {
   userDetails: string = 'Users Page';
   searchby: string = 'Search User By:';
   userSearchBy: string;
-  // userLOGGEDTIME: string;
+  userLOGGEDTIME: string = moment(localStorage.getItem('userLoggedInTimeInAgo')).fromNow();
   userSearchResult: string = 'User Search Results: ';
   loggedInTime: string = localStorage.getItem('UserloggedIntime');
-  // = moment().format('MMMM Do YYYY, h:mm:ss a');
-  constructor(private _userService: UserService, private route: ActivatedRoute) {}
+
+  // moment().format('MMMM Do YYYY, h:mm:ss a');
+  constructor(private _userService: UserService, private route: ActivatedRoute) {
+  }
 
   users: Iuser[];
 
   ngOnInit(): void {
     this._userService.getUsers()
       .subscribe((data) => this.users = data);
-   // this.route.params.subscribe(params => {
-    //  this.userLOGGEDTIME = params['timelogging'];
-    // });
   }
-
+}
   // moved to service call
   /*users: any = [
     {
@@ -262,4 +261,3 @@ export class UserComponent implements OnInit {
       }
     }
   ];*/
-}

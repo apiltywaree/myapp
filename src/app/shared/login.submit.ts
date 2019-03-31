@@ -10,10 +10,12 @@ export class LoginSubmitComponent {
 
   @Input() loggedTime: number;
   @Output() userLoggedInTime: EventEmitter<string> = new EventEmitter<string>();
+  @Output() userLoggedInTimeInAgo: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
 
   onSubmitButton(): void {
     this.userLoggedInTime.emit(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    this.userLoggedInTimeInAgo.emit((moment().format()));
   }
 }
