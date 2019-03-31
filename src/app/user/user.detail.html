@@ -4,25 +4,54 @@
    <h3>{{userDetails.name}} Details Page</h3>
   </div>
     <div class="panel-body">
+      <button class="btn pull-right bg-primary" (click)="onBack()">Back to Users</button>
       User Details Page Content for {{id}}
       <h3>Name: {{userDetails.name}}</h3>
       <h5>Username: {{userDetails.username}}</h5>
       <h5>Email: {{userDetails.email}}</h5>
       <h5>Phone: {{userDetails.phone}}</h5>
       <h5>Website: {{userDetails.website}}</h5>
-      <h5>Company: {{userDetails.company.name}}<br/>
-        Catch Phrase: {{userDetails.company.catchPhrase}}<br/>
-        BS: {{userDetails.company.bs}}
+      <h5>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Company</th><th>{{userDetails.company.name}}</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Catch Phrase</td><td>{{userDetails.company.catchPhrase}}</td>
+            </tr>
+            <tr>
+              <td>BS</td><td>{{userDetails.company.bs}}</td>
+            </tr>
+          </tbody>
+        </table>
       </h5>
       <h5>Address:<br/>
-        Street: {{userDetails.address.street}}<br/>
-        Suite: {{userDetails.address.suite}}<br/>
-        City: {{userDetails.address.city}}<br/>
-        Zipcode: {{userDetails.address.zipcode}}<br/>
-        Latitude: {{userDetails.address.geo.lat}}<br/>
-        Longitude: {{userDetails.address.geo.lng}}
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Street</th>
+            <th>Suite</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{userDetails.address.street}}</td>
+            <td>{{userDetails.address.suite}}</td>
+            <td>{{userDetails.address.city}}</td>
+            <td>{{userDetails.address.zipcode}}</td>
+            <td>{{userDetails.address.geo.lat}}</td>
+            <td>{{userDetails.address.geo.lng}}</td>
+          </tr>
+          </tbody>
+        </table>
       </h5>
     </div>
-    <button class="btn btn-danger" (click)="onBack()">Back to Users</button>
   </div>
 </div>
