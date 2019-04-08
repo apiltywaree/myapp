@@ -64,4 +64,46 @@ product app
 This will build dist folder with some resources, all resources inside this folder should be added to ang-app folder
 in production.
 
+// email contact
+ahanda205@gmail.com
 
+//Localization
+If we run the application now with “npm start” we are going to see the en-US version of a long date.
+March 20, 2018 at 1:06:34 AM GMT+0
+
+Let’s run it now with the command “npm run start:es”, now we are going to see the Spanish version of the date rendered.
+20 de marzo de 2018, 0:55:01 GMT+0
+
+/*
+"i18nFile": "src/locale/messages.es.xlf",
+            "i18nLocale": "es",
+            "i18nFormat": "xlf",
+            "aot": true,
+            */
+
+// to run app with i18n
+ng serve --configuration=es
+
+//for production
+ng build --prod --i18n-file src/locale/messages.fr.xlf --i18n-format xlf --i18n-locale fr
+
+inside build
+  configurations
+    add
+    "es": {
+                      "aot": true,
+                      "outputPath": "dist/myapp-es/",
+                      "baseHref": "/es/",
+                      "i18nFile": "src/locale/messages.es.xlf",
+                      "i18nFormat": "xlf",
+                      "i18nLocale": "es",
+                      "i18nMissingTranslation": "error"
+                    }
+
+
+in serve
+  configurations
+    add
+    "es": {
+              "browserTarget": "myapp:build:es"
+            }
